@@ -33,7 +33,7 @@ spec:
         - containerPort: 8000
         volumeMounts:
         - name: django-vol
-          mountPath: /app
+          mountPath: /app/db
 ---
 apiVersion: v1
 kind: Service
