@@ -10,4 +10,5 @@ RUN pip install django psycopg2
 RUN django-admin startproject django_kube /app
 RUN python manage.py migrate
 RUN python manage.py createsuperuser --noinput --email "admin@admin.com"
+RUN sed -i 's/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \[*\]/' /app/django_kube/settings.py
 CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
