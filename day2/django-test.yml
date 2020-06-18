@@ -31,10 +31,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gkvr-cust-portal-svc
-  namespace: dev-gkvr-system
+  namespace: workshop
 spec:
   selector:
-    app: gkvr-cust-portal
+    app: django
   ports:
   - name: web
     port: 80
