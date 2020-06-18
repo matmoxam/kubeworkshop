@@ -23,8 +23,8 @@ spec:
       volumes:
         - name: django-vol
           hostPath:
-            path: /tmp
-            type: Directory
+            path: /tmp/app
+            type: DirectoryOrCreate
       containers:
       - name: django
         image: mmoxam/workshop:django-test-latest
