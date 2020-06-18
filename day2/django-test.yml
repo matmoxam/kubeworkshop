@@ -34,13 +34,11 @@ spec:
         volumeMounts:
         - name: django-vol
           mountPath: /app/db
-        securityContext:
-          allowPrivilegeEscalation: false
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: gkvr-cust-portal-svc
+  name: django
   namespace: workshop
 spec:
   type: NodePort
