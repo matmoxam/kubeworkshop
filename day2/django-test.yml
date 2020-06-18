@@ -34,6 +34,8 @@ spec:
         volumeMounts:
         - name: django-vol
           mountPath: /app/db
+        securityContext:
+          allowPrivilegeEscalation: true
 ---
 apiVersion: v1
 kind: Service
