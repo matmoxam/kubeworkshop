@@ -22,7 +22,9 @@ spec:
     spec:
       volumes:
         - name: django-vol
-          emptyDir: {}
+          hostPath:
+            path: /tmp
+            type: Directory
       containers:
       - name: django
         image: mmoxam/workshop:django-test-latest
