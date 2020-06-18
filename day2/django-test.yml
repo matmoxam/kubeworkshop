@@ -23,8 +23,8 @@ spec:
       volumes:
         - name: django-vol
           hostPath:
-            path: /tmp
-            type: Directory
+            path: /tmp/db.sqlite3
+            type: FileOrCreate
       containers:
       - name: django
         image: mmoxam/workshop:django-test-latest
@@ -33,7 +33,7 @@ spec:
         - containerPort: 8000
         volumeMounts:
         - name: django-vol
-          mountPath: /app/db
+          mountPath: /app/db/db.sqlite3
 ---
 apiVersion: v1
 kind: Service
