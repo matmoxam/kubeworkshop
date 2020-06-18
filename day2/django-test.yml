@@ -31,7 +31,7 @@ spec:
         - containerPort: 8000
         volumeMounts:
         - name: django-vol
-          mountPath: /app/db.sqlite3
+          mountPath: /app/db
 ---
 apiVersion: v1
 kind: Service
