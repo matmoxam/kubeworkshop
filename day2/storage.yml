@@ -10,7 +10,7 @@ spec:
   - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain  
   local:
-    path: /tmp
+    path: /home/ubuntu
   nodeAffinity:
     required:
       nodeSelectorTerms:
