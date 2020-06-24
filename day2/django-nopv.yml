@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: workshop
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django
+  namespace: workshop
+  labels:
+    app: django
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django
+  template:
+    metadata:
+      labels:
+        app: django
+    spec:      
+      containers:
+      - name: django
+        image: mmoxam/workshop:django-test-latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: django
+  namespace: workshop
+spec:
+  type: NodePort
+  selector:
+    app: django
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8000  
