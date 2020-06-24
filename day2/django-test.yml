@@ -3,6 +3,18 @@ kind: Namespace
 metadata:
   name: workshop
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: django-pvc
+  namespace: workshop
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
