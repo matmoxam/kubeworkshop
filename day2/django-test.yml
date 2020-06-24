@@ -42,9 +42,9 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
-        volumeMounts:
-        - name: django-vol
-          mountPath: /app/db
+        #volumeMounts:
+        #- name: django-vol
+        #  mountPath: /app/db
 ---
 apiVersion: v1
 kind: Service
