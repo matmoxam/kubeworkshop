@@ -22,9 +22,8 @@ spec:
     spec:
       volumes:
         - name: django-vol
-          hostPath:
-            path: /tmp/app
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: django-pvc
       containers:
       - name: django
         image: mmoxam/workshop:django-test-latest
