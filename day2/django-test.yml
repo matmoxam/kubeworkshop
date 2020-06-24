@@ -32,10 +32,10 @@ spec:
       labels:
         app: django
     spec:
-      volumes:
-        - name: django-vol
-          persistentVolumeClaim:
-            claimName: django-pvc
+      #volumes:
+      #  - name: django-vol
+      #    persistentVolumeClaim:
+      #      claimName: django-pvc
       containers:
       - name: django
         image: mmoxam/workshop:django-test-latest
